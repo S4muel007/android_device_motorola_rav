@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_rav.mk
+    $(LOCAL_DIR)/dot_rav.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_rav-user \
-    lineage_rav-userdebug \
-    lineage_rav-eng
+    dot_rav-user \
+    dot_rav-userdebug \
+    dot_rav-eng
