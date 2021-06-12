@@ -23,6 +23,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/motorola/rav/rav-vendor.mk)
 
+# Livedisplay
+PRODUCT_PACKAGES += \
+    lineage.livedisplay@2.0-service-sdm
+
 # rav_overlay
 PRODUCT_PACKAGES += \
     MotoRav
