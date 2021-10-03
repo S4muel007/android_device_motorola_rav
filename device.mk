@@ -155,6 +155,10 @@ PRODUCT_PACKAGES += \
     SystemUI_MotoSofiaPSprout \
     SystemUI_MotoSofiaR
 
+# MotoActions
+PRODUCT_PACKAGES += \
+    MotoActions
+
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_profiles_vendor.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_profiles_vendor.xml
