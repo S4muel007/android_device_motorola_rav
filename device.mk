@@ -23,10 +23,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/motorola/rav/rav-vendor.mk)
 
-# rav_overlay
-PRODUCT_PACKAGES += \
-    MotoRav
-
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
@@ -72,10 +68,6 @@ AB_OTA_POSTINSTALL_CONFIG += \
 PRODUCT_PACKAGES += \
     otapreopt_script
 
-# LineageActions
-PRODUCT_PACKAGES += \
-    LineageActions
-
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
@@ -83,7 +75,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy_engine_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio_policy_engine_configuration.xml \
-	  $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio_policy_configuration.xml
+    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio_policy_configuration.xml
 
 # Boot control
 PRODUCT_PACKAGES += \
@@ -137,6 +129,24 @@ PRODUCT_PACKAGES += \
 # QTI Bluetooth
 PRODUCT_PACKAGES += \
     BluetoothQti
+
+# Moto Framework Overlay
+PRODUCT_PACKAGES += \
+    MotoRav \
+    MotoRavT \
+    MotoSofia \
+    MotoSofiaP \
+    MotoSofiaPSprout \
+    MotoSofiaR
+
+# Moto SystemUI Overlay
+PRODUCT_PACKAGES += \
+    SystemUI_MotoRav \
+    SystemUI_MotoRavT \
+    SystemUI_MotoSofia \
+    SystemUI_MotoSofiaP \
+    SystemUI_MotoSofiaPSprout \
+    SystemUI_MotoSofiaR
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -209,7 +219,7 @@ PRODUCT_PACKAGES += \
     WifiOverlay
 
 PRODUCT_COPY_FILES += \
-	  $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/wifi/WCNSS_qcom_cfg.ini
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/wifi/WCNSS_qcom_cfg.ini
 
 # WiFi Display
 PRODUCT_PACKAGES += \
@@ -224,6 +234,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
-# BootFix
+# Properties
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.control_privapp_permissions=log

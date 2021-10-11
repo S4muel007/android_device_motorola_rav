@@ -66,11 +66,11 @@ BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/motorola/sm6125
+TARGET_KERNEL_SOURCE := kernel/motorola/trinket
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_CLANG_VERSION := r365631c
 
-TARGET_KERNEL_CONFIG := vendor/rav_defconfig
+TARGET_KERNEL_CONFIG := vendor/sofiar_defconfig
 
 # QCOM
 BOARD_USES_QCOM_HARDWARE := true
@@ -122,9 +122,6 @@ TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
 # HIDL
 DEVICE_FRAMEWORK_MANIFEST_FILE := $(COMMON_PATH)/framework_manifest.xml
 
-# Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_moto_trinket
-
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
 
@@ -165,6 +162,9 @@ TARGET_USES_MKE2FS := true
 
 # Telephony
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
+
+# Init
+TARGET_INIT_VENDOR_LIB := //$(COMMON_PATH):libinit_moto_trinket
 
 # Sepolicy
 include device/qcom/sepolicy/SEPolicy.mk
