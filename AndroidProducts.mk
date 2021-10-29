@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/dot_rav.mk
+    $(LOCAL_DIR)/aosp_rav.mk
 
 COMMON_LUNCH_CHOICES := \
-    dot_rav-user \
-    dot_rav-userdebug \
-    dot_rav-eng
+    aosp_rav-user \
+    aosp_rav-userdebug \
+    aosp_rav-eng
